@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<script src="jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+
+		* {
+			margin: 0;
+			padding: 0;
+
+		}
+
+		.container {
+			width: 800px;
+			margin: 0 auto;
+		}
+
+		ul.menu , .sub_dropmenu{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+
+		ul.menu li {
+			float: left;
+			width: 150px;
+			padding: 20px;
+			background-color: teal;
+			line-height: 1.5em;	
+			position: relative;
+		}
+
+		ul.menu li a {
+			display: block;
+			color: white;
+			text-decoration: none;
+		}
+
+/*		ul.menu li:hover {
+			background-color: green;
+		}*/
+
+		ul.menu .dropmenu {
+			position: absolute;
+			top:55px;
+			left: 0px;
+			list-style: none;
+			display: none;
+		}
+
+
+	/*	ul.menu li:hover .dropmenu {
+			display: block;
+		}*/
+
+		ul.menu .dropmenu .sub_dropmenu {
+			position: absolute;
+			top:0px;
+			left: 160px;
+		}
+
+		ul.menu .dropmenu li {
+			position: relative;
+			top: 0px;
+			left: 50px;
+		}
+
+		ul.menu .dropmenu .sub_dropmenu {
+			position: absolute;
+			top: 0px;
+			display: none;
+			left: 140px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<ul class="menu">
+				<li><a href="#" title="">Home</a></li>
+				<li><a href="#" title="">Contact</a>
+					<ul class="dropmenu">
+						<li><a href="#" title="">Truong phong</a></li>
+						<li><a href="#" title="">Ke toan</a>
+							<ul class="sub_dropmenu">
+								<li><a href="#" title="">A</a></li>
+								<li><a href="#" title="">B</a></li>
+								<li><a href="#" title="">C</a></li>
+							</ul>
+						</li>
+						<li><a href="#" title="">ADSISE</a></li>
+					</ul>
+				</li>
+				<li><a href="#" title="">Tuturial</a></li>
+				<li><a href="#" title="">Lorem</a></li>
+			</ul>
+		</nav>
+	</div>
+	<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+					$(".menu > li, .sub_dropmenu > li").hover(function () {
+					$(this).find(" ul:first, .sub_dropmenu:first").slideDown(500);
+				}, function() {
+					$(this).find(" ul:first, .sub_dropmenu:first").hide(200);			
+				}
+			);
+		});
+	</script>
+</body>
+</html>
